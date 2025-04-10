@@ -7,7 +7,6 @@ import {
   Projects,
   ServiceCount,
   Skills,
-  Background,
   ParticlesContainer,
 } from "./";
 import { AnimatePresence } from "framer-motion";
@@ -33,8 +32,7 @@ const App = () => {
       <About />
 
       {/* certifications */}
-      
-      
+
       {/* skills container */}
       <Skills />
 
