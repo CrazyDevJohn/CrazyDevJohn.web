@@ -1,5 +1,5 @@
 > CrazyDevJohn.web.app
-> ![Crazy Dev John](../snap.png) > ![Crazy Dev John](../snap2.png)
+> ![Crazy Dev John](./snap.png) > ![Crazy Dev John](./snap2.png)
 
 # Getting Started with Create React App
 
