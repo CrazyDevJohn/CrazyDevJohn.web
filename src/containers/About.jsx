@@ -30,7 +30,7 @@ const About = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 end-full">
         {/* image sction */}
         <div className="w-full flex items-center justify-center px-8">
-          <div className="w-full lg:w-96 p-[2px] rounded-md bg-gradient-to-br from-primary to-secondary relative">
+          <div className="w-full lg:w-96 p-[2px] rounded-md bg-gradient-to-br from-primary to-secondary relative shadow-2xl">
             <img
               src={about}
               className="w-full h-auto rounded-md object-contain"
@@ -72,7 +72,13 @@ const About = () => {
                     key={index}
                     className="w-7 h-7 flex justify-center items-center rounded-lg bg-[rgba(255,255,255,.1)] cursor-pointer"
                   >
-                    <i className={`${icon} text-xl colored`}></i>
+                    <i
+                      className={`${icon} text-xl colored`}
+                      title={icon
+                        .replace("devicon-", "")
+                        .replace("-plain", "")
+                        .replace("-original", "")}
+                    ></i>
                   </li>
                 );
               })}

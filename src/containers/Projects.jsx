@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Leaf1, Leaf2, about } from "../assets";
-import { ProjectsData } from "../utils/helper";
-import { FaGithub } from "react-icons/fa6";
-import { GoFlame } from "react-icons/go";
+import { iconClasses } from "../utils/helper";
+import { fetchProjects } from "../sanity";
 
 const Projects = () => {
+  const [projectsData, setProjectsData] = useState([]);
+
+  const fetchingData = async () => {
+    await fetchProjects()
+      .then((d) => setProjectsData(d))
+      .catch((er) => console.log("Error In Fetching Project"));
+  };
+
+  useEffect(() => {
+    fetchingData();
+  }, []);
+
   return (
     <section
       id="projects"
@@ -31,8 +42,8 @@ const Projects = () => {
       {/* main content */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 end-full">
         <AnimatePresence>
-          {ProjectsData &&
-            ProjectsData.map((project, index) => {
+          {projectsData &&
+            projectsData.map((project, index) => {
               return <ProjectCard key={index} project={project} />;
             })}
         </AnimatePresence>
@@ -43,9 +54,10 @@ const Projects = () => {
 
 const ProjectCard = ({ project }) => {
   const [isHovered, setIsHovered] = React.useState(false);
+
   return (
     <motion.div
-      key={project.id}
+      key={project._id}
       className="overflow-hidden cursor-pointer rounded-lg relative"
       onMouseEnter={() => {
         setIsHovered(true);
@@ -57,18 +69,40 @@ const ProjectCard = ({ project }) => {
       <motion.img
         whileHover={{ scale: 1.1 }}
         className="w-full h-full object-contain rounded-lg"
-        src={project.imgSrc}
+        src={project.image.asset.url}
       />
       {isHovered && (
-        <motion.div className="absolute inset-0 backdrop-blur-md bg-[rgba(0,0,0,.6)] flex items-center justify-center flex-col gap-2">
-          <p className="text-xl text-primary">{project?.name}</p>
-          <div className="flex gap-2">
-            <a href={project.gitURL}>
-              <FaGithub className="text-3xl text-white hover:text-primary" />
+        <motion.div className="absolute inset-0 backdrop-blur-md bg-[rgba(0,0,0,.6)] flex items-center justify-center flex-col ">
+          <h2 className="text-base text-primary">{project.category}</h2>
+          <p className="text-xl text-primary">{project?.title}</p>
+          <h2 className="text-sm text-secondary">using:</h2>
+          <div className="flex gap-2 mt-3">
+            <a href={project.gitLink} target="_blank">
+              <i
+                className={`${iconClasses["github"]} colored text-3xl text-white hover:text-primary`}
+              />
             </a>
-            <a href={project.liveUrl}>
-              <GoFlame className="text-3xl text-white hover:text-primary" />
+            <a href={project.liveLink} target="_blank">
+              <i
+                className={`devicon-chrome-plain colored text-3xl text-white hover:text-primary`}
+              />
             </a>
+          </div>
+          <div className="flex gap-2 mt-3 flex-wrap justify-center items-center w-3/4">
+            {project.tech.length > 0 &&
+              project?.tech?.map((tech, i) => {
+                console.log(tech.className);
+                return (
+                  <>
+                    <i
+                      className={`${tech.className}  colored text-xl text-white hover:text-primary`}
+                    />
+                  </>
+                );
+              })}
+          </div>
+          <div className="justify-center flex flex-col  items-center pt-3">
+            <h2 className="text-sm text-texlight">{project.description}</h2>
           </div>
         </motion.div>
       )}

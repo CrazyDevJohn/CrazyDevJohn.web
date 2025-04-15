@@ -94,9 +94,30 @@ export const iconClasses = {
   firebase: "devicon-firebase-plain",
   electron: "devicon-electron-original",
   typescript: "devicon-typescript-plain",
+  mongodb: "devicon-mongodb-plain",
+  github: "devicon-github-plain",
+  linkedin: "devicon-linkedin-plain",
+  django: "devicon-django-plain",
+  figma: "devicon-figma-plain",
+  go: "devicon-go-plain",
+  jquery: "devicon-jquery-plain",
+  json: "devicon-json-plain",
+  sass: "devicon-sass-plain",
+  tailwindcss: "devicon-tailwindcss-plain",
+  android: "devicon-android-plain",
+  androidstudio: "devicon-androidstudio-plain",
+  aws: "devicon-aws-plain",
+  atom: "devicon-atom-plain",
+  axios: "devicon-axios-plain",
+  chrome: "devicon-chrome-plain",
 };
 
 export const aboutIcons = [
+  "devicon-axios-plain",
+  "devicon-android-plain",
+  "devicon-tailwindcss-plain",
+  "devicon-chrome-plain",
+  "devicon-sass-plain",
   "devicon-html5-plain",
   "devicon-css3-plain",
   "devicon-javascript-plain",
@@ -110,6 +131,12 @@ export const aboutIcons = [
   "devicon-firebase-plain",
   "devicon-electron-original",
   "devicon-typescript-plain",
+  "devicon-mongodb-plain",
+  "devicon-django-plain",
+  "devicon-figma-plain",
+  "devicon-go-plain",
+  "devicon-jquery-plain",
+  "devicon-json-plain",
 ];
 
 export const ProjectsData = [
@@ -119,6 +146,7 @@ export const ProjectsData = [
     imgSrc: RestaurantClone,
     gitURL: "https://github.com/CrazyDevJohn/",
     liveUrl: "#",
+    developedBy: ["react", "nodejs", "nextjs", "mongodb", "sanity", "firebase"],
   },
   {
     id: `codepen-${Date.now()}`,
@@ -126,6 +154,7 @@ export const ProjectsData = [
     imgSrc: CodePenClone,
     gitURL: "https://github.com/CrazyDevJohn/",
     liveUrl: "#",
+    developedBy: ["react", "nodejs", "sanity", "firebase"],
   },
   {
     id: `openai-${Date.now()}`,
@@ -133,6 +162,7 @@ export const ProjectsData = [
     imgSrc: OpenAI,
     gitURL: "https://github.com/CrazyDevJohn/",
     liveUrl: "#",
+    developedBy: ["react", "nodejs", "sanity", "firebase"],
   },
   {
     id: `chatapp-${Date.now()}`,
@@ -140,6 +170,7 @@ export const ProjectsData = [
     imgSrc: ChatApp,
     gitURL: "https://github.com/CrazyDevJohn/",
     liveUrl: "#",
+    developedBy: ["react", "nodejs", "sanity", "firebase"],
   },
   {
     id: `imageSharing-${Date.now()}`,
@@ -147,6 +178,7 @@ export const ProjectsData = [
     imgSrc: ImageSharing,
     gitURL: "https://github.com/CrazyDevJohn/",
     liveUrl: "#",
+    developedBy: ["react", "nodejs", "sanity", "firebase"],
   },
   {
     id: `pixabayclone-${Date.now()}`,
@@ -154,6 +186,7 @@ export const ProjectsData = [
     imgSrc: PixabayClone,
     gitURL: "https://github.com/CrazyDevJohn/",
     liveUrl: "#",
+    developedBy: ["react", "nodejs", "sanity", "firebase"],
   },
   {
     id: `freshjuiceui-${Date.now()}`,
@@ -161,6 +194,7 @@ export const ProjectsData = [
     imgSrc: FreshJuiceUI,
     gitURL: "https://github.com/CrazyDevJohn/",
     liveUrl: "#",
+    developedBy: ["react", "nodejs", "sanity", "firebase"],
   },
   {
     id: `socialmedia-${Date.now()}`,
@@ -168,27 +202,30 @@ export const ProjectsData = [
     imgSrc: SocialMedia,
     gitURL: "https://github.com/CrazyDevJohn/",
     liveUrl: "#",
+    developedBy: ["react", "nodejs", "sanity", "firebase"],
   },
   {
     id: `portfoliofirebase-${Date.now()}`,
+
     name: "Portfolio UI Fireabse",
     imgSrc: PortfolioFirebase,
     gitURL: "https://github.com/CrazyDevJohn/",
     liveUrl: "#",
+    developedBy: ["react", "nodejs", "sanity", "firebase"],
   },
 ];
 
 export const skillsIcons = [
-  {
-    lang: "html5",
-    progress: "90%",
-    color: "#E34C26",
-  },
-  {
-    lang: "css3",
-    progress: "85%",
-    color: "#3C99DC",
-  },
+  // {
+  //   lang: "html5",
+  //   progress: "90%",
+  //   color: "#E34C26",
+  // },
+  // {
+  //   lang: "css3",
+  //   progress: "85%",
+  //   color: "#3C99DC",
+  // },
   {
     lang: "javascript",
     progress: "97%",
@@ -211,17 +248,17 @@ export const skillsIcons = [
   },
   {
     lang: "react",
-    progress: "94%",
+    progress: "95%",
     color: "#61DBFB",
   },
   {
     lang: "nodejs",
-    progress: "88%",
+    progress: "98%",
     color: "#058100",
   },
   {
     lang: "nextjs",
-    progress: "75%",
+    progress: "95%",
     color: "#111",
   },
   {

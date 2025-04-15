@@ -23,7 +23,7 @@ const MenuItem = ({ menu, index }) => {
       onClick={(ev) => scrollToSection(ev, menu?.uri)}
     >
       <menu.Icon
-        className={`text-texlight text-xl group-hover:text-bgPrimary`}
+        className={`text-neutral-800 text-xl group-hover:text-white`}
       />
 
       <AnimatePresence>

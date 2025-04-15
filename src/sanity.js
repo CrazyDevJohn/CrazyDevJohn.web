@@ -9,41 +9,23 @@ export const client = createClient({
   // useCdn:true
 });
 
-export const getHomeContent = async () => {
-  return await client.fetch(`*[_type=="home"]{
+export const fetchProjects = async () => {
+  const response = await client.fetch(`*[_type=="projects" && showInMain]{
+  _id,
+    image{
+    asset->{
+        url,
+      }
+  },
+  tech[]->{
+    name,
+    className
+  },
   title,
-    typeWritterText,
   description,
-    hireme
-}[0]`);
-};
-
-export const getServices = async () => {
-  return await client.fetch(`*[_type=="services"]{
-  customers,
-    fProjects,
-    students,
-    pProjects
-}[0]`);
-};
-
-export const getAbout = async () => {
-  return await client.fetch(`*[_type=="about"]{
-  text
+  category,
+  gitLink,
+  liveLink
 }`);
-};
-
-export const getProjects = async () => {
-  return await client.fetch(`*[_type=="projects"]{
-    projects[] {
-    code,
-    text,
-    demo,
-    snap {
-        asset->{
-        url
-        }
-    }
-    }
-}[0]`);
+  return response;
 };
